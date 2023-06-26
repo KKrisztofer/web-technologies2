@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="row pt-2">
+      <div class="col">
+        <h4>Termékek:</h4>
+        <p></p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-2">ID</div>
+      <div class="col-md-2">Elnevezés</div>
+      <div class="col-md-2">Leírás</div>
+      <div class="col-md-2">Ár</div>
+    </div>
+  
+    <hr class="my-4">
+  
+    <div class="row mb-2" *ngFor="let product of selectedProducts">
+      <div class="col-md-2">{{ product.id }}</div>
+      <div class="col-md-2">{{ product.name }}</div>
+      <div class="col-md-2">{{ product.description }}</div>
+      <div class="col-md-2">{{ product.price }}</div>
+      <div class="col-md-1"><button class="btn btn-primary btn-sm" (click)="deleteProduct(product)">Töröl</button></div>
+      <div class="col-md-1"><button class="btn btn-primary btn-sm" (click)="navigateToForm(product.id)">Módosít</button></div>
+    </div>
+  </div>
+  

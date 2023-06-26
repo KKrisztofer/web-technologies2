@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row pt-2">
+      <div *ngIf="isNewProduct">
+        <h4 class="mb-4">Termék létrehozása:</h4>
+      </div>
+      <div *ngIf="!isNewProduct">
+        <h4 class="mb-4">{{existingproduct?.name}} nevű termék módosítása:</h4>
+      </div>
+    </div>
+  
+    <div class="container">
+      <form [formGroup]="productForm">
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Elnevezés</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name">
+          </div>
+          <div class="col-md-6">
+            <label for="description" class="form-label">Leírás</label>
+            <input type="text" class="form-control" id="description" name="description" formControlName="description">
+          </div>
+        </div>
+  
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="price" class="form-label">Ár</label>
+            <input type="number" class="form-control" id="price" name="price" formControlName="price">
+          </div>
+        </div>
+      </form>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-6">
+        <div *ngIf="isNewProduct">
+          <div class="col-md-4"><button class="btn btn-primary btn-block" (click)="saveProduct()">Termék létrehozása</button></div>
+        </div>
+        <div *ngIf="!isNewProduct">
+          <div class="col-md-4"><button class="btn btn-primary btn-block" (click)="saveProduct()">Termék módosítása</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

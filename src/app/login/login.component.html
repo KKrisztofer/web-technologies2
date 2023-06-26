@@ -1,0 +1,24 @@
+<div class="container">
+    <h4 class="mb-4">Admin felület:</h4>
+    
+    <div class="form-group row mb-3">
+      <label for="loginname" class="col-md-3 col-form-label">Felhasználónév:</label>
+      <div class="col-md-8">
+        <input type="text" class="form-control" id="loginname" name="loginname" placeholder="Felhasználónév" [(ngModel)]="nameValue">
+      </div>
+    </div>
+    
+    <div class="form-group row mb-3">
+      <label for="password" class="col-md-3 col-form-label">Jelszó:</label>
+      <div class="col-md-8">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó" [(ngModel)]="passwordValue">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-8 offset-md-3">
+        <button class="btn btn-primary btn-block" (click)="login()">Bejelentkezés</button>
+      </div>
+    </div>
+  </div>
+  
